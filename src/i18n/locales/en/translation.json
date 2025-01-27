@@ -1,0 +1,28 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "language": "Language",
+    "english": "English",
+    "bengali": "Bengali"
+  },
+  "client": {
+    "title": "Client Side Page",
+    "description": "This page is rendered on the client side",
+    "counter": "Count: {{count}}",
+    "increment": "Increment"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "dhaka": "Dhaka",
+    "chittagong": "Chittagong"
+  },
+  "home": {
+    "title": "Welcome to Our Site",
+    "description": "Find everything you need here"
+  },
+  "about": {
+    "description": "We are a team dedicated to providing the best service to our customers."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "common": {
+    "welcome": "Bienvenido",
+    "language": "Idioma"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Bienvenido a Nuestro Sitio",
+    "description": "Encuentra todo lo que necesitas aquí"
+  }
+}
