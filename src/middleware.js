@@ -68,7 +68,8 @@ export function middleware(request) {
     locations.some(
       (location) =>
         pathname.startsWith(`/${locale}/${location}/`) ||
-        pathname === `/${locale}/${location}`
+        pathname === `/${locale}/${location}` ||
+        (pathname.includes(`/${locale}`) && pathname.includes(`/${location}`))
     )
   )
 
@@ -100,6 +101,8 @@ export function middleware(request) {
     return NextResponse.redirect(
       new URL(`${pathname}/${location}`, request.url)
     )
+  } else {
+    return NextResponse.next()
   }
 }
 
