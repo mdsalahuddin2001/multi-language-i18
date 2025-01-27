@@ -10,6 +10,38 @@ async function getTranslations(locale) {
     t: i18nInstance.getFixedT(locale, 'translation'),
   }
 }
+const data = {
+  dhaka: {
+    title_en: 'Dhaka',
+    title_bn: 'ঢাকা',
+    description_en: 'Dhaka is the capital city of Bangladesh.',
+    description_bn: 'ঢাকা বাংলাদেশের প্রাদেশিক শহর।',
+  },
+  chittagong: {
+    title_en: 'Chittagong',
+    title_bn: 'চট্টগ্রাম',
+    description_en: 'Chittagong is the second largest city of Bangladesh.',
+    description_bn: 'চট্টগ্রাম বাংলাদেশের দ্বিতীয় বড় শহর।',
+  },
+}
+
+export async function generateMetadata({ params }) {
+  const { location, locale } = params
+
+  const title = data[location]?.[`title_${locale}`] || 'Location Page'
+  const description =
+    data[location]?.[`description_${locale}`] || 'Welcome to our location page'
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+  }
+}
+
 const LocationLayout = async ({ children, params }) => {
   const { location, locale } = params
   const { t } = await getTranslations(params.locale)
