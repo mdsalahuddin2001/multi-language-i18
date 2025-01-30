@@ -1,3 +1,4 @@
+import ClientComponent from '@/components/ClientComponent'
 import { initTranslations } from '@/i18n/server'
 import React from 'react'
 
@@ -31,6 +32,8 @@ const MainPage = async ({ params }) => {
           ? 'Chittagang'
           : 'চটগ্রাম'}
       </h1>
+
+      <ClientComponent />
     </div>
   )
 }
