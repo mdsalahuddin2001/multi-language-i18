@@ -1,11 +1,11 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { setLocation } from '@/actions/setLocation'
 
 export default function ClientLocationSwitcher({ location }) {
   const pathname = usePathname()
-
+  const router = useRouter()
   const changeLocation = async (newLocation) => {
     if (newLocation === location) return
 
@@ -26,7 +26,8 @@ export default function ClientLocationSwitcher({ location }) {
       const newUrl = `/${currentLocale}/${newLocation}${path}`
 
       // Do a full page reload
-      window.location.href = newUrl
+      // window.location.href = newUrl
+      router.push(newUrl)
     } catch (error) {
       console.error('Failed to set location:', error)
     }

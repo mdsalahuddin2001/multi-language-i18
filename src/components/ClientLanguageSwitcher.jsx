@@ -1,11 +1,11 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { setLanguage } from '@/actions/setLanguage'
 
 export default function ClientLanguageSwitcher({ locale }) {
   const pathname = usePathname()
-
+  const router = useRouter()
   const changeLanguage = async (newLocale) => {
     if (newLocale === locale) return
 
@@ -24,7 +24,8 @@ export default function ClientLanguageSwitcher({ locale }) {
       const newUrl = `/${newLocale}${path}`
 
       // Do a full page reload
-      window.location.href = newUrl
+      // window.location.href = newUrl
+      router.push(newUrl)
     } catch (error) {
       console.error('Failed to set language:', error)
     }

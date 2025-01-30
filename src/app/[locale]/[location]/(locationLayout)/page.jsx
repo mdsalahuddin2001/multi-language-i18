@@ -7,7 +7,14 @@ async function getTranslations(locale) {
     t: i18nInstance.getFixedT(locale, 'translation'),
   }
 }
-
+export const generateStaticParams = () => {
+  return [
+    { locale: 'en', location: 'dhaka' },
+    { locale: 'bn', location: 'dhaka' },
+    { locale: 'en', location: 'chittagong' },
+    { locale: 'bn', location: 'chittagong' },
+  ]
+}
 const MainPage = async ({ params }) => {
   const { t } = await getTranslations(params.locale)
 
